@@ -13,10 +13,13 @@ public class DemoApplication {
     }
 
     @Bean
-    CommandLineRunner initData(EmployeeRepository employeeRepository) {
+    CommandLineRunner initData(EmployeeRepository employeeRepository, ManagerRepository managerRepository) {
         return args -> {
-            employeeRepository.save(new Employee("pippo1", "pluto1", "paperino1"));
-            employeeRepository.save(new Employee("pippo2", "pluto2", "paperino2"));
+            Manager mpluto = new Manager("mpluto");
+            managerRepository.save( mpluto);
+
+            employeeRepository.save(new Employee("pippo1", "pluto1", "paperino1", mpluto));
+            employeeRepository.save(new Employee("pippo2", "pluto2", "paperino2", mpluto));
         };
     }
 

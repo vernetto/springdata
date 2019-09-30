@@ -13,13 +13,15 @@ public class Employee {
     String firstName;
     String lastName;
     String role;
+    Manager manager;
 
     private Employee() {
     }
 
-    public Employee(String firstName, String lastName, String role) {
+    public Employee(String firstName, String lastName, String role, Manager manager) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.role = role;
+        this.manager = manager;
     }
 }
