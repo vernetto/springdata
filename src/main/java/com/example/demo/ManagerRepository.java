@@ -8,6 +8,6 @@ import java.util.List;
 
 @RepositoryRestResource
 public interface ManagerRepository extends CrudRepository<Manager, Long> {
-    List<Manager> findByEmployeeRoleContains(@Param("q") String role) ;
+    List<Manager> findByEmployeesRoleContains(@Param("q") String role) ;
 
 }
